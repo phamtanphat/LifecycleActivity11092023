@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.Toast
 
 class MainActivity3 : AppCompatActivity() {
 
@@ -17,10 +18,16 @@ class MainActivity3 : AppCompatActivity() {
         btnNavigateMain3 = findViewById(R.id.button_navigate_main3)
         btnNavigateMain3.setOnClickListener {
           val intent = Intent(this@MainActivity3, MainActivity::class.java)
+          intent.putExtra("text", "hello")
           startActivity(intent)
         }
 
         Log.d("pphat", "Main3: onCreate")
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        Toast.makeText(this, intent?.getStringExtra("text"), Toast.LENGTH_SHORT).show()
     }
 
     override fun onStart() {
