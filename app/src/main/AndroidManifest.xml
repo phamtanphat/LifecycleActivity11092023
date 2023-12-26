@@ -17,6 +17,8 @@
             android:launchMode="singleTop"
             android:exported="false" />
         <activity
+            android:taskAffinity=""
+            android:launchMode="singleTask"
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
