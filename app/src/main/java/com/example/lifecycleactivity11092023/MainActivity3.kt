@@ -1,13 +1,25 @@
 package com.example.lifecycleactivity11092023
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 
 class MainActivity3 : AppCompatActivity() {
+
+    private lateinit var btnNavigateMain3 : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
+
+        btnNavigateMain3 = findViewById(R.id.button_navigate_main3)
+        btnNavigateMain3.setOnClickListener {
+          val intent = Intent(this@MainActivity3, MainActivity::class.java)
+          startActivity(intent)
+        }
+
         Log.d("pphat", "Main3: onCreate")
     }
 
